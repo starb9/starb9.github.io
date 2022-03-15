@@ -12,6 +12,10 @@
   <head>
     {% include head.html %}
     {% include head/custom.html %}
+    <!-- 수식표현 위해 추가된 내용 아래로 3줄 -->
+    {% if page.use_math %}
+	    {% include mathjax_support.html %}
+    {% endif %}
   </head>
 
   <body class="layout--{{ page.layout | default: layout.layout }}{% if page.classes or layout.classes %}{{ page.classes | default: layout.classes | join: ' ' | prepend: ' ' }}{% endif %}">
